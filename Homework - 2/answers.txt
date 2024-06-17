@@ -1,0 +1,24 @@
+1.  we recycled a lot of code between the functions, the main function usually does a lot of the same
+    error handling conditions.
+    we could shrink the code by a great margin by combining the C files and making different functions,
+    when each function does what the current C files do, writing to the stdout. Or make a separete file
+    which will hold the declaration of generalized functions which we will later include in each script.
+
+2.  using the tools we have developed and the command above ( "$(( ($(od -An -N2 -i /dev/random) )%(100) ))" )
+    we can see that the grades indeed are uniformly disterbuted, as each range has around a 10th of the amount
+    of the overall recorded grades.
+
+    we used a bash script running a loop:
+
+    for j in {1..10}
+    do
+        for i in {1..1000}
+        do
+            echo "$(( ($(od -An -N2 -i /dev/random) )%(100) ))" >> "$j".txt
+        done
+        ./calc_stat.sh "$j"
+        rm "$j".txt
+    done
+
+    and the amount of grades in each range in each of the results consistenly had between 90-110 results.
+    leading us to believe that the grades are indeed uniformly disterbuted.

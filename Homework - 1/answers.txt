@@ -1,0 +1,16 @@
+Question 1:
+In our opinion it would take, for an informed person about the procedure, about
+an hour to finish the job, using crtl + f of course.
+
+Qestion 2:
+Programming can be really usful for gathering data and orginizing it. Any task
+that requires scraping data from multiple sources and places can be automated
+and done quickly and after that can be repeated easily.
+
+Question 3:
+To repeat the task every hour we would probably want a server which is up 24/7
+and has a schedualer which will run a CLI command at the top of the hour.
+To deal with sites which we already scraped we would keep a text file of some
+sort which will contain all the addresses we "visited" and each time we want
+to scrape an address we would double check with the file that the address is
+not there (will increase run time).
